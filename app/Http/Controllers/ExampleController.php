@@ -17,7 +17,7 @@ class ExampleController extends BaseController
      */
     public function example(): Response
     {
-        event(new SendCode(random_int(10000,99999), CodeSenderHandlers::Console));
+        event(new SendCode((string) random_int(10000,99999), CodeSenderHandlers::Console));
 
         return new JsonResponse('Code was sent');
     }
