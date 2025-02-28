@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Contracts\ICodeRepository;
 use App\Contracts\ICodeSender;
 use App\Enums\CodeSenderHandlers;
 use App\Factories\CodeSenderHandlersFactory;
@@ -16,7 +17,7 @@ use Psr\Container\ContainerExceptionInterface;
 readonly class SendCodeListener
 {
     public function __construct(
-        private CodeSenderHandlersFactory $factory
+        private CodeSenderHandlersFactory $factory,
     )
     {
     }
